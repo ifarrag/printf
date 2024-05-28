@@ -52,7 +52,7 @@ int print_char(va_list ptr)
  * print_p - prints % to stdout
  * @ptr: va_arg pointer
  */
-int print_p (va_list ptr)
+int print_p (va_list ptr__attribute__((unused)))
 {
 	return (write(1, "%", 1));
 }
