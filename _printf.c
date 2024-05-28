@@ -11,6 +11,7 @@ int _printf(const char *format, ...)
 {
 	unsigned int n, sum = 0, o;
 	va_list ptr;
+	char arr[] = {'c', 's', '%'};
 
 	int (*fptr[])(va_list ptr) = {print_char, print_str, print_p};
 	va_start(ptr, format);
@@ -68,5 +69,5 @@ int print_str(va_list ptr)
 	{
 		i++;
 	}
-	return (write(1, str, i);
+	return (write(1, str, i));
 }
