@@ -70,8 +70,8 @@ int print_str(va_list ptr)
 	unsigned int i = 0;
 	char *str = va_arg(ptr, char*);
 
-	if (str == 0)
-		return ((1, "(null)", 6));
+	if (str == NULL)
+		return (write(1, "(null)", 6));
 	while (str[i])
 	{
 		i++;
