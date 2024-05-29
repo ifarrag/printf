@@ -43,7 +43,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
-			nevermind:
+nevermind:
 			sum += write(1, &format[n], 1);
 		}
 	}
