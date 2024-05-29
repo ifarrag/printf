@@ -11,6 +11,7 @@ int print_p(va_list ptr);
  */
 int _printf(const char *format, ...)
 {
+	char chara = 'A';
 	unsigned int n, sum = 0, o;
 	va_list ptr;
 	char arr[] = {'c', 's', '%'};
@@ -24,16 +25,25 @@ int _printf(const char *format, ...)
 		if (format[n] == '%')
 		{
 			n++;
+			if (format[n] == NULL)
+				return (-1);
 			for (o = 0; o < 3; o++)
 			{
 				if (format[n] == arr[o])
 				{
+					chara = 'B';
 					sum += (*fptr[o])(ptr);
 				}
+			}
+			if (chara == 'A')
+			{
+				n--;
+				goto nevermind;
 			}
 		}
 		else
 		{
+			nevermind:
 			sum += write(1, &format[n], 1);
 		}
 	}
