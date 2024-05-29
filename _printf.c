@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 		if (format[n] == '%')
 		{
 			n++;
-			if (format[n] == NULL)
+			if (format[n] == '\0')
 				return (-1);
 			for (o = 0; o < 3; o++)
 			{
