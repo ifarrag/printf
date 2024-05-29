@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 	int (*fptr[])(va_list ptr) = {print_char, print_str, print_p};
 	va_start(ptr, format);
 	if (format == NULL)
-		return (0);
+		return (-1);
 	for (n = 0; format[n] != '\0'; n++)
 	{
 		if (format[n] == '%')
