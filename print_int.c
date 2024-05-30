@@ -41,7 +41,7 @@ int print_int(va_list ptr)
 	}
 	while (t < i)
 	{
-		sum += write(1, str[t], 1);
+		sum += write(1, &str[t], 1);
 		t++;
 	}
 	free(str);
