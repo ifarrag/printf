@@ -25,21 +25,22 @@ int print_int(va_list ptr)
 		num = num * -1;
 		write(1, "-", 1);
 	}
-	for (i = 0; mun != 0; i++)
+	for (i = 1; mun != 0; i++)
 	{
 		t++;
 		mun = mun / 10;
 	}
-	str = malloc(sizeof(char) * t);
+	str = malloc(sizeof(char) * (t + 1));
 	if (str == NULL)
 		return (-1);
+	str[t] = '\0';
 	t--;
 	for (; t >= 0; t--)
 	{
 		str[t] = (num % 10) + 48;
 		num = num / 10;
 	}
-	sum = write(1, str, t);
+	sum = write(1, str, i);
 	free(str);
 	return (sum);
 }
