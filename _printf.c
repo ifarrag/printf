@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+int print_int(va_list ptr);
 int print_char(va_list ptr);
 int print_str(va_list ptr);
 int print_p(va_list ptr);
@@ -14,9 +15,9 @@ int _printf(const char *format, ...)
 	char chara = 'A';
 	unsigned int n, sum = 0, o;
 	va_list ptr;
-	char arr[] = {'c', 's', '%'};
+	char arr[] = {'c', 's', '%', 'i', 'd'};
 
-	int (*fptr[])(va_list ptr) = {print_char, print_str, print_p};
+	int (*fptr[])(va_list ptr) = {print_char, print_str, print_p, print_int, print_int};
 	va_start(ptr, format);
 	if (format == NULL)
 		return (-1);
