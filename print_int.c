@@ -15,7 +15,7 @@ int print_int(va_list ptr)
 
 	if (num == 0)
 	{
-		write(1, '0', 1);
+		write(1, "0", 1);
 		return (1);
 	}
 	if (mun < 0)
@@ -23,7 +23,7 @@ int print_int(va_list ptr)
 		sum++;
 		mun = mun * -1;
 		num = num * -1;
-		write(1, '-', 1);
+		write(1, "-", 1);
 	}
 	for (i = 0; mun != 0; i++)
 	{
