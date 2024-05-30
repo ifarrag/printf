@@ -39,6 +39,7 @@ int print_int(va_list ptr)
 		str[t] = (num % 10) + 48;
 		num = num / 10;
 	}
+	t = 0;
 	while (t < i)
 	{
 		sum += write(1, &str[t], 1);
