@@ -34,7 +34,8 @@ int print_int(va_list ptr)
 	if (str == NULL)
 		return (-1);
 	str[t] = '\0';
-	for (--t; t >= 0; t--)
+	t--;
+	for (; t >= 0; t--)
 	{
 		str[t] = (num % 10) + 48;
 		num = num / 10;
