@@ -37,6 +37,7 @@ int print_int(va_list ptr)
 	for (--t; t >= 0; t--)
 	{
 		str[t] = (num % 10) + 48;
+		num = num / 10;
 	}
 	sum = write(1, str, t);
 	free(str);
