@@ -30,10 +30,9 @@ int print_int(va_list ptr)
 		t++;
 		mun = mun / 10;
 	}
-	str = malloc(sizeof(char) * (t + 1));
+	str = malloc(sizeof(char) * t);
 	if (str == NULL)
 		return (-1);
-	str[t] = '\0';
 	t--;
 	for (; t >= 0; t--)
 	{
