@@ -40,6 +40,7 @@ int print_int(va_list ptr)
 		num = num / 10;
 	}
 	t = 0;
+	i--;
 	while (t < i)
 	{
 		sum += write(1, &str[t], 1);
