@@ -28,7 +28,7 @@ int _printf(const char *format, ...)
 			n++;
 			if (format[n] == '\0')
 				return (-1);
-			for (o = 0; o < 3; o++)
+			for (o = 0; o < 5; o++)
 			{
 				if (format[n] == arr[o])
 				{
