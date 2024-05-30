@@ -8,9 +8,9 @@
  */
 int print_int(va_list ptr)
 {
-	int num = va_arg(ptr, int);
-	int mun = num;
-	int i = 0, t = 0, sum = 0;
+	long int num = va_arg(ptr, int);
+	long int mun = num;
+	long int i = 0, t = 0, sum = 0;
 	char *str;
 
 	if (num == 0)
@@ -39,7 +39,11 @@ int print_int(va_list ptr)
 		str[t] = (num % 10) + 48;
 		num = num / 10;
 	}
-	sum = write(1, str, i);
+	while (t < i)
+	{
+		sum += write(1, str[t], 1);
+		t++;
+	}
 	free(str);
 	return (sum);
 }
